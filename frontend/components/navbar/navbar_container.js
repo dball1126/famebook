@@ -7,7 +7,7 @@ const msp = (state) => {
     
     let userId = state.session.id || [];
     let currentUser;
-    if (userId) currentUser = state.entities.users[2];
+    if (userId) currentUser = state.entities.users[userId];
     
     return {
         currentUser: currentUser
