@@ -25,7 +25,7 @@ class Signup extends React.Component{
         return (
             <div className="session-form">
                 <h2>Signup</h2>
-                <form action="">
+                <form >
                     <label>Username:
                         <input type="text"
                                 value={this.state.username}
