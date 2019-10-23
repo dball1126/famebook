@@ -16,6 +16,7 @@
 class Post < ApplicationRecord
     validates :author_id, presence: true
     
+    #Associations
     belongs_to :user,
     primary_key: :id, 
     foreign_key: :author_id,
