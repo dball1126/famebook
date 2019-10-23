@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  password_digest :string           not null
+#  username        :string           not null
+#  email           :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+# Indexes
+#
+#  index_users_on_email     (email) UNIQUE
+#  index_users_on_username  (username) UNIQUE
+#
+
 class User < ApplicationRecord
     validates :email, :password_digest, :session_token, presence: true
     validates :password, length: {minimum: 8}, allow_nil: true
