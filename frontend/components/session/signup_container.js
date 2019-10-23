@@ -5,7 +5,7 @@ import Signup from './signup';
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        dispatch: user => dispatch(signup(user))
+        signup: user => dispatch(signup(user))
     }
 }
 
