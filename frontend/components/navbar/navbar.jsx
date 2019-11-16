@@ -14,11 +14,13 @@ export default ({ currentUser, logout}) => {
         </div>
     )
     return (
-        <header className="nav-bar">
+        <div className="nav-bar">
+            
             <h1 className="logo">FameBook</h1>
+            
             <div>
                 {display}
             </div>
-        </header>
+        </div>
     );
 };

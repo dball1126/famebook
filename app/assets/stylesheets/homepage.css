@@ -1,0 +1,11 @@
+ .body {
+    font-family: "Helvetica Neue";
+}
+
+
+.nav-bar{
+    background-color: #3d5b98;
+    color: #FFFFFF;
+    height: 82px;
+    min-width: 980px;
+}
