@@ -1,6 +1,6 @@
 import React from 'react';
-import connect from 'react-redux';
-
+import {connect} from 'react-redux';
+import Posts from './posts';
 const msp = (state) => {
     
 }
