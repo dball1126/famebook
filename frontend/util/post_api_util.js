@@ -34,3 +34,10 @@ export const updatePost = (post) => {
         data: {post}
     })
 }
+
+export const userPosts = (user) => {
+    return $.ajax({
+        method: 'GET',
+        url: `/api/users/${user.id}/posts`
+    })
+}
