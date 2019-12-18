@@ -79,3 +79,7 @@
     width: 142px;
     padding-bottom: 4px;
 }
+
+.login-form input {
+    background-color: #e8f0fe;
+}
