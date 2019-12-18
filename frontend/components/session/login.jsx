@@ -23,20 +23,28 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div className="session-form">
-                <h2>Login</h2>
-                <form >
-                    <label>Email:
-                        <input type="text"
-                            value={this.state.email}
-                            onChange={this.handleInput('email')} />
-                    </label>
-                    <label>Password:
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.handleInput('password')} />
-                    </label>
-                    <button onClick={this.handleSubmit}>Login Up</button>
+            <div className="login-session-form">
+
+                <form className="login-form">
+                    <div className="email-login">
+                        <label>Email:
+                            <input type="text"
+                                value={this.state.email}
+                                onChange={this.handleInput('email')} />
+                        </label>
+                    </div>
+
+                    <div className="password-login">
+                        <label>Password:
+                            <input type="password"
+                                value={this.state.password}
+                                onChange={this.handleInput('password')} />
+                        </label>
+                    </div>
+
+                    <div className="button-login">
+                        <button onClick={this.handleSubmit}>Login Up</button>
+                    </div>
                 </form>
             </div>
         )

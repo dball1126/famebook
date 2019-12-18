@@ -1,8 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LoginContainer from '../session/login_container';
 
 export default ({ currentUser, logout}) => {
-    const display = currentUser ? (
+    const displayLogin = currentUser ? (
+        <div>
+            <p>Hello, {currentUser.username}</p>
+            <button onClick={logout}>Logout</button>
+        </div>
+    ) : (
+        <>
+            <LoginContainer className="btn" to="/Login">Login</LoginContainer>
+        </>
+    )
+    const displaySignup = currentUser ? (
         <div>
             <p>Hello, {currentUser.username}</p>
             <button onClick={logout}>Logout</button>
@@ -10,7 +21,6 @@ export default ({ currentUser, logout}) => {
     ) : (
         <div>
             <Link className="btn" to="/signup">Sign Up</Link>
-            <Link className="btn" to="/Login">Login</Link>
         </div>
     )
     return (
@@ -21,9 +31,7 @@ export default ({ currentUser, logout}) => {
                 </div>
 
                 <div className="nav-buttons">
-                
-                        {display}
-
+                        {displayLogin}
                 </div>
             </div>
         </div>

@@ -16,7 +16,7 @@
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
-    
+    padding-top: 13px;
 
 }
 .btn {
@@ -31,4 +31,23 @@
 .nav-buttons {
     max-width: 393px;
     height: 65px;
+}
+
+.email-login {
+    max-width: 164px;
+    font-size: 12px;
+}
+.password-login {
+    max-width: 164px;
+    font-size: 12px;
+
+}
+.button-login{
+    max-width: 65px;
+    font-size: 12px;
+
+}
+
+.login-form {
+    display: flex;
 }
