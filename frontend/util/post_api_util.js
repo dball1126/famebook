@@ -35,7 +35,7 @@ export const updatePost = (post) => {
     })
 }
 
-export const userPosts = (user) => {
+export const fetchUserPosts = (user) => {
     return $.ajax({
         method: 'GET',
         url: `/api/users/${user.id}/posts`

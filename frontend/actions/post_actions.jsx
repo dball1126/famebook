@@ -64,3 +64,11 @@ export const updatePost = (post) => {
         })
     }
 }
+
+export const fetchUserPosts = () => {
+    return (dispatch) => {
+        return PostApiUtil.fetchUserPosts().then(payload => {
+            return dispatch(receievePosts(payload));
+        })
+    }
+} 
