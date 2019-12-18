@@ -3,6 +3,7 @@ import * as PostApiUtil from '../util/post_api_util';
 export const DELETE_POST = 'DELETE_POST';
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const RECEIEVE_ALL_POSTS = 'RECEIEVE_ALL_POSTS';
+export const RECEIEVE_ALL_USER_POSTS = 'RECEIEVE_ALL_USER_POSTS';
 
 const receievePost = ({post}) => {
     return {
@@ -10,9 +11,17 @@ const receievePost = ({post}) => {
         post: post
     }
 }
-const receievePosts = ({posts}) => {
+const receievePosts = (posts) => {
+    
     return {
         type: RECEIEVE_ALL_POSTS,
+        posts: posts
+    }
+}
+const receieveUserPosts = (posts) => {
+    
+    return {
+        type: RECEIEVE_ALL_USER_POSTS,
         posts: posts
     }
 }
@@ -65,10 +74,13 @@ export const updatePost = (post) => {
     }
 }
 
-export const fetchUserPosts = () => {
+export const fetchUserPosts = (userId) => {
+    
     return (dispatch) => {
-        return PostApiUtil.fetchUserPosts().then(payload => {
-            return dispatch(receievePosts(payload));
+        
+        return PostApiUtil.fetchUserPosts(userId).then(payload => {
+            
+            return dispatch(receieveUserPosts(payload));
         })
     }
 } 

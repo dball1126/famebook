@@ -6,6 +6,10 @@ class Posts extends React.Component {
         super(props);
     }
 
+    componentDidMount(){
+        this.props.fetchUserPosts(this.props.userId);
+    }
+
     render(){
         return  (
             <div className="posts-wrapper">

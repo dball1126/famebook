@@ -10,7 +10,7 @@
 #
 # Indexes
 #
-#  index_posts_on_author_id  (author_id) UNIQUE
+#  index_posts_on_author_id  (author_id)
 #
 
 class Post < ApplicationRecord
