@@ -26,6 +26,9 @@
 .logo{
     font-family: arial;
     font-size: 36px;
+    font-family: arial;
+    font-size: 43px;
+    margin-top: 15px;
 }
 
 .nav-buttons {
@@ -36,18 +39,43 @@
 .email-login {
     max-width: 164px;
     font-size: 12px;
+    padding-right: 15px;
 }
 .password-login {
     max-width: 164px;
     font-size: 12px;
-
+    padding-right: 15px;
 }
 .button-login{
     max-width: 65px;
     font-size: 12px;
-
+    padding-top: 15px;
+}
+.button-div {
+    background-color: #4267b1;
+    color: #FFFFFF;
+    border: 1px solid #000000;
+    /* height: 24px; */
+    text-align: center;
+    /* padding-left: 5px; */
+    padding: 5px;
+    /* padding-top: 0px; */
+    margin-top: 2px;
 }
 
 .login-form {
     display: flex;
+}
+
+.email-label {
+    padding: 0px 0px 4px 0px;
+}
+
+.password-label {
+    padding: 0px 0px 4px 0px;
+}
+
+.login-form input {
+    width: 142px;
+    padding-bottom: 4px;
 }
