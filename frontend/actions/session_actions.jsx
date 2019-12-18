@@ -5,7 +5,7 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 export const signup = (user) => {
     return (dispatch) => {
-        debugger
+        
         return SessionApiUtil.signup(user).then(user => {
             return dispatch(receieveCurrentUser(user));
 
