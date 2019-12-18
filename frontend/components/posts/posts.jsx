@@ -8,8 +8,12 @@ class Posts extends React.Component {
 
     render(){
         return  (
-            <div>
-                
+            <div className="posts-wrapper">
+                <div className="posts-box">
+                    <h1>"ASDFASDFASDFASDF</h1>
+                    <h1>aasdfasdfasdf</h1>
+                    <h1>aasdfasdfasdf</h1>
+                </div>
             </div>
         )
     }
