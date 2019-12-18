@@ -13,7 +13,7 @@ const usersReducer = (oldState = {}, action) => {
             return {};
         case RECEIEVE_ALL_USER_POSTS:
         
-            return Object.assign({}, oldState, {posts: action.posts})
+            return Object.assign({}, oldState, {posts: Object.values(action.posts)})
         default:
             return oldState;
     }

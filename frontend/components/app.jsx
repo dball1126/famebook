@@ -5,7 +5,7 @@ import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import NavBarContainer from './navbar/navbar_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
-import PostsContainer from './posts/posts_container';
+import PostsContainer from './posts/posts_index_container';
 
 
 const App = () => {
