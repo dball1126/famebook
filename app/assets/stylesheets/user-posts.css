@@ -1,4 +1,36 @@
 .posts-wrapper{
-    background-color: #e8ebee;
     height: 100%;
+    background-color: #e8ebee;
+    padding-top: 12px;
+}
+
+.posts-box{
+    max-width: 1012px;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    display: flex;
+}
+
+.posts-left-wrapper{
+    width: 180px;
+}
+
+.posts-right-wrapper{
+    max-width: 820px;
+    display: flex;
+    background-color: #e8ebee;
+
+}
+
+.posts-right-inner-left-box{
+    width: 500px;
+    padding-right: 12px;
+    background-color: #FFFFFF;
+
+}
+
+.posts-right-inner-right-box{
+    width: 308px;
+    background-color: #FFFFFF;
+
 }

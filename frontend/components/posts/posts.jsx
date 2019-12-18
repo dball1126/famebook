@@ -10,9 +10,18 @@ class Posts extends React.Component {
         return  (
             <div className="posts-wrapper">
                 <div className="posts-box">
-                    <h1>"ASDFASDFASDFASDF</h1>
-                    <h1>aasdfasdfasdf</h1>
-                    <h1>aasdfasdfasdf</h1>
+                    <div className="posts-left-wrapper">
+                            <h1>POSTS LEFT</h1>
+                    </div>
+                    <div className="posts-right-wrapper">
+                        <div className="posts-right-inner-left-box">
+                            <h1>posts right inner left</h1>
+
+                        </div>
+                        <div className="posts-right-inner-right-box">
+                            <h1>posts right inner right</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
