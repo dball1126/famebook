@@ -14,12 +14,17 @@ export default ({ currentUser, logout}) => {
         </div>
     )
     return (
-        <div className="nav-bar">
-            
-            <h1 className="logo">FameBook</h1>
-            
-            <div>
-                {display}
+        <div className="nav-bar-wrapper">
+            <div className="nav-bar-box">
+                <div className="nav-logo">
+                    <h1 className="logo">famebook</h1>
+                </div>
+
+                <div className="nav-buttons">
+                
+                        {display}
+
+                </div>
             </div>
         </div>
     );

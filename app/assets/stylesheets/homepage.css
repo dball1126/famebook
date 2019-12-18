@@ -3,9 +3,32 @@
 }
 
 
-.nav-bar{
+.nav-bar-wrapper{
     background-color: #3d5b98;
     color: #FFFFFF;
     height: 82px;
     min-width: 980px;
+    
+}
+
+.nav-bar-box {
+    max-width: 980px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    
+
+}
+.btn {
+    color: white;
+    text-decoration: none;
+}
+.logo{
+    font-family: arial;
+    font-size: 36px;
+}
+
+.nav-buttons {
+    max-width: 393px;
+    height: 65px;
 }
