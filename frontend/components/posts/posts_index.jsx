@@ -8,11 +8,42 @@ class Posts extends React.Component {
         this.state = ({
             posts: props.posts
         })
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(e){
+        e.preventDefault();
+
+    }
+    updateField(field){
+        return (e) => {
+            this.setState({ [field]: e.target.value })
+        }
     }
 
     componentDidMount(){
-        this.props.fetchUserPosts(this.props.userId).then(() => this.setState({posts: this.props.posts}));
-        
+        this.props.fetchUserPosts(this.props.userId).then(() => this.setState({posts: this.props.posts})); 
+    }
+
+    postForm(){
+        let username = this.props.user.useranme;
+        return(
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <div className="postform-headline">
+                        <span>Create Post</span>
+                        </div>
+                    <div>
+                    <div className="postform-body">
+
+                        <textarea type="text"
+                               onChange={this.updateField('body')} 
+                               placeholder={`What's on your mind, ${username}`}/>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        )
     }
 
     
@@ -29,7 +60,9 @@ class Posts extends React.Component {
                     </div>
                     <div className="posts-right-wrapper">
                         <div className="posts-right-inner-left-box">
-                            <h1>posts right inner left</h1>
+
+                            {this.postForm()}
+
                             <PostsIndexItem posts={posts} user={user}/>
                         </div>
                         <div className="posts-right-inner-right-box">
