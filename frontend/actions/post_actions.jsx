@@ -84,3 +84,11 @@ export const fetchUserPosts = (userId) => {
         })
     }
 } 
+
+export const createUserPost = (userId) => {
+    return (dispatch) => {
+        return PostApiUtil.createUserPost(userId).then(payload => {
+            return dispatch(receievePost(payload))
+        })
+    }
+}
