@@ -13,11 +13,13 @@ const usersReducer = (oldState = {}, action) => {
             return {};
         case RECEIEVE_ALL_USER_POSTS:
         
-            return Object.assign({}, oldState, {posts: Object.values(action.posts)})
+            return Object.assign({}, oldState, {posts: Object.values(action.posts).reverse()})
 
         case RECEIVE_POST:
-            debugger
-            // need to update post in reducer
+            
+            oldState.posts.unshift(action.post)
+         
+            
             return Object.assign({}, oldState)
         default:
             return oldState;

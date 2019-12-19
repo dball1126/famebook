@@ -5,7 +5,8 @@ export const RECEIVE_POST = 'RECEIVE_POST';
 export const RECEIEVE_ALL_POSTS = 'RECEIEVE_ALL_POSTS';
 export const RECEIEVE_ALL_USER_POSTS = 'RECEIEVE_ALL_USER_POSTS';
 
-const receievePost = ({post}) => {
+const receievePost = (post) => {
+    
     return {
         type: RECEIVE_POST,
         post: post
@@ -86,10 +87,10 @@ export const fetchUserPosts = (userId) => {
 } 
 
 export const createUserPost = (data) => {
-    debugger
+    
     return (dispatch) => {
         return PostApiUtil.createUserPost(data).then(payload => {
-            debugger
+            
             return dispatch(receievePost(payload))
         })
     }

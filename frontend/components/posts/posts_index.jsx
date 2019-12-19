@@ -16,7 +16,7 @@ class Posts extends React.Component {
         e.preventDefault();
         
         this.props.createUserPost({body: this.state.body,
-                                   author_id: this.props.userId})
+                                   author_id: this.props.userId}).then(() => this.props.history.push('/'))
     }
     updateField(field){
         return (e) => {

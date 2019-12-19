@@ -12,11 +12,11 @@ class Api::PostsController < ApplicationController
     end
 
     def create
-        debugger
+        
         @post = Post.new(post_params)
-        debugger
+        
         if @post.save
-            render "api/posts"
+            render json: show
         else 
             render json: @post.errors.full_messages, status: 422
         end
@@ -25,7 +25,7 @@ class Api::PostsController < ApplicationController
     def update
         @post = Post.find_by(id: params[:id])
         if @post.update_attributes(post_params)
-            render json: show 
+            
         else
             render json: @post.errors.full_messages, status: 422
         end
@@ -35,7 +35,7 @@ class Api::PostsController < ApplicationController
         @post = Post.find(params[:id])
     end
 
-    
+    private
 
     def post_params
         params.require(:post).permit(:author_id, :body)
