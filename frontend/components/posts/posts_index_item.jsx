@@ -1,6 +1,7 @@
 import React from 'react';
 
 const PostsIndexItem = ({posts, user}) => {
+    debugger
     return (
 
         posts.map(post =>{
