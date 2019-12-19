@@ -4,14 +4,16 @@ import PostsIndex from './posts_index';
 import {fetchUserPosts} from '../../actions/post_actions';
 
 const msp = (state) => {
-    
-    
+    // Currently not being used, posts index pushes to posts index item
     let posts = [];
+    let userId = state.session.id;
+    let user = state.entities.users[userId];
     if (state.entities.users.posts) posts = state.entities.users.posts
     
     return {
-        userId: state.session.id,
-        posts: posts
+        userId: userId,
+        posts: posts,
+        user: user
     }
 }
 

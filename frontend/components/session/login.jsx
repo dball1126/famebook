@@ -17,8 +17,7 @@ class Login extends React.Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        this.props.login(this.state)
-            .then(() => this.props.history.push('/'))
+        this.props.login(this.state).then(() => this.props.history.push('/posts'))
     }
 
     render() {
@@ -27,7 +26,7 @@ class Login extends React.Component {
 
                 <form className="login-form">
                     <div className="email-login">
-                        <div className="email-label"><label for="email">Email:</label></div>
+                        <div className="email-label"><label htmlFor="email">Email:</label></div>
                         
                             <input type="text"
                                 value={this.state.email}
@@ -35,7 +34,7 @@ class Login extends React.Component {
                     </div>
 
                     <div className="password-login">
-                        <div className="password-label"><label for="password">Password:</label></div>
+                        <div className="password-label"><label htmlFor="password">Password:</label></div>
                             <input type="password"
                                 value={this.state.password}
                                 onChange={this.handleInput('password')} id="password"/>
