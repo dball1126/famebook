@@ -28,21 +28,21 @@ class Posts extends React.Component {
     postForm(){
         let username = this.props.user.useranme;
         return(
-            <div>
+            <>
                 <form onSubmit={this.handleSubmit}>
                     <div className="postform-headline">
                         <span>Create Post</span>
-                        </div>
-                    <div>
+                    </div>
+                    
                     <div className="postform-body">
-
                         <textarea type="text"
                                onChange={this.updateField('body')} 
                                placeholder={`What's on your mind, ${username}`}/>
                     </div>
-                    </div>
+                    <button type="Submit" value="Post" className="postbutton">Post</button>
+                   
                 </form>
-            </div>
+            </>
         )
     }
 

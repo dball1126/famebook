@@ -1,3 +1,5 @@
 blue 3d5b98
 
 greyish background #e8ebee
+
+light blue for post #9cb4d8
