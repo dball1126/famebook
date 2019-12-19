@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PostsIndex from './posts_index';
-import {fetchUserPosts} from '../../actions/post_actions';
+import {fetchUserPosts, createUserPost} from '../../actions/post_actions';
 
 const msp = (state) => {
-    // Currently not being used, posts index pushes to posts index item
+    // Currently not being used, posts index passes to posts index item directly
     let posts = [];
     let userId = state.session.id;
     let user = state.entities.users[userId];
@@ -20,7 +20,8 @@ const msp = (state) => {
 const mdp = (dispatch) => {
 
     return {
-        fetchUserPosts: (userId) => dispatch(fetchUserPosts(userId))
+        fetchUserPosts: (userId) => dispatch(fetchUserPosts(userId)),
+        createUserPost: (userId) => dispatch(createUserPost(userId))
     }
 }
 

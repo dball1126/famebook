@@ -14,7 +14,7 @@
 #
 
 class Post < ApplicationRecord
-    validates :author_id, presence: true
+    validates :author_id, :body, presence: true
     
     #Associations
     belongs_to :user,

@@ -6,14 +6,17 @@ class Posts extends React.Component {
     constructor(props){
         super(props);
         this.state = ({
-            posts: props.posts
+            posts: props.posts,
+            body: ""
         })
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e){
         e.preventDefault();
-
+        
+        this.props.createUserPost({body: this.state.body,
+                                   author_id: this.props.userId})
     }
     updateField(field){
         return (e) => {
@@ -26,7 +29,7 @@ class Posts extends React.Component {
     }
 
     postForm(){
-        let username = this.props.user.useranme;
+        let username = this.props.user.username;
         return(
             <>
                 <form onSubmit={this.handleSubmit}>

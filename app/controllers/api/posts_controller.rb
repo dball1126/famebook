@@ -12,7 +12,9 @@ class Api::PostsController < ApplicationController
     end
 
     def create
+        debugger
         @post = Post.new(post_params)
+        debugger
         if @post.save
             render "api/posts"
         else 
@@ -36,6 +38,6 @@ class Api::PostsController < ApplicationController
     
 
     def post_params
-        params.require(:post).permit(:author_id, :body, :created_at)
+        params.require(:post).permit(:author_id, :body)
     end
 end

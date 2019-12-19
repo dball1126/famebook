@@ -85,9 +85,11 @@ export const fetchUserPosts = (userId) => {
     }
 } 
 
-export const createUserPost = (userId) => {
+export const createUserPost = (data) => {
+    debugger
     return (dispatch) => {
-        return PostApiUtil.createUserPost(userId).then(payload => {
+        return PostApiUtil.createUserPost(data).then(payload => {
+            debugger
             return dispatch(receievePost(payload))
         })
     }
