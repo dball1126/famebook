@@ -11,7 +11,6 @@ class Posts extends React.Component {
             photoFile: null
         })
         this.handleSubmit = this.handleSubmit.bind(this);
-
     }
 
     handlefile(e){
@@ -21,9 +20,6 @@ class Posts extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         const formData = new FormData();
-        
-        // this.props.createUserPost({body: this.state.body,
-        //                            author_id: this.props.userId}).then(() => this.props.history.push('/'));
 
         if (this.state.photoFile) {
             formData.append('post[image]', this.state.photoFile);
@@ -32,7 +28,7 @@ class Posts extends React.Component {
         formData.append('post[author_id]', this.props.userId);
         formData.append('post[body]', this.state.body);
 
-        $.ajax({
+        $.ajax({ //Specifically for uploading a photo due to requirements
             url: `/api/users/${this.props.userId}/posts`,
             method: 'POST',
             data: formData,

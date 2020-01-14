@@ -7,9 +7,10 @@ const PostsIndexItem = (props) => {
     return (
 
         posts.map(post =>{
+
             let postImage = () => {
-                if (post.image) {
-                    return <img src={post.image} />
+                if (post.image_attached) {
+                    return <img src={post.image} className="post-image"/>
                 } else {
                     return "";
                 }

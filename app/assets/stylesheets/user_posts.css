@@ -34,3 +34,7 @@
     background-color: #FFFFFF;
 
 }
+
+.post-image {
+    max-width: 50px;
+}
