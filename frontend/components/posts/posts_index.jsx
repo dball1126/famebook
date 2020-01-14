@@ -7,9 +7,17 @@ class Posts extends React.Component {
         super(props);
         this.state = ({
             posts: props.posts,
-            body: ""
+            body: "",
+            photoFile: null
         })
         this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleFile = this.handlefile.bind(this);
+
+    }
+
+    handlefile(e){
+        debugger
+        this.setState({photoFile: e.currentTarget.files[0]});
     }
 
     handleSubmit(e){
@@ -42,8 +50,8 @@ class Posts extends React.Component {
                                onChange={this.updateField('body')} 
                                placeholder={`What's on your mind, ${username}`}/>
                     </div>
-                    <button type="Submit" value="Post" className="postbutton">Post</button>
-                   
+                    <input type="file" onChange={this.handlefile.bind(this)}/>
+                    <button type="Submit" value="Post" className="postbutton">Post</button>                   
                 </form>
             </>
         )
@@ -54,7 +62,7 @@ class Posts extends React.Component {
         let posts = this.state.posts;
         let user = this.props.user;
        
-        
+        console.log(this.state)
         return  (
             <div className="posts-wrapper">
                 <div className="posts-box">
