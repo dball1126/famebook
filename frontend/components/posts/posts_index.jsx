@@ -11,29 +11,44 @@ class Posts extends React.Component {
             photoFile: null
         })
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.handleFile = this.handlefile.bind(this);
 
     }
 
     handlefile(e){
-        debugger
         this.setState({photoFile: e.currentTarget.files[0]});
     }
 
     handleSubmit(e){
         e.preventDefault();
+        const formData = new FormData();
         
-        this.props.createUserPost({body: this.state.body,
-                                   author_id: this.props.userId}).then(() => this.props.history.push('/'))
+        // this.props.createUserPost({body: this.state.body,
+        //                            author_id: this.props.userId}).then(() => this.props.history.push('/'));
+
+        if (this.state.photoFile) {
+            formData.append('post[image]', this.state.photoFile);
+        }
+
+        formData.append('post[author_id]', this.props.userId);
+        formData.append('post[body]', this.state.body);
+
+        $.ajax({
+            url: `/api/users/${this.props.userId}/posts`,
+            method: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false
+        });
     }
+
     updateField(field){
         return (e) => {
-            this.setState({ [field]: e.target.value })
+            this.setState({ [field]: e.target.value });
         }
     }
 
     componentDidMount(){
-        this.props.fetchUserPosts(this.props.userId).then(() => this.setState({posts: this.props.posts})); 
+        this.props.fetchUserPosts(this.props.userId).then(() => this.setState({posts: this.props.posts}));
     }
 
     postForm(){
