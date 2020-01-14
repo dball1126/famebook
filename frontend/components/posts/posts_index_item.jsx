@@ -1,10 +1,20 @@
 import React from 'react';
 
-const PostsIndexItem = ({posts, user}) => {
+const PostsIndexItem = (props) => {
+    let posts = props.posts;
+    let user = props.user
     
     return (
 
         posts.map(post =>{
+            let postImage = () => {
+                if (post.image) {
+                    return <img src={post.image} />
+                } else {
+                    return "";
+                }
+            }
+            
 
             return (
                 <div key={post.id}>
@@ -13,6 +23,7 @@ const PostsIndexItem = ({posts, user}) => {
                     </div>
                     <div>
                         {post.body}
+                        {postImage()}
                     </div>
                 </div>
                 )

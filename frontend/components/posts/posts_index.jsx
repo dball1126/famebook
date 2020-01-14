@@ -77,7 +77,6 @@ class Posts extends React.Component {
         let posts = this.state.posts;
         let user = this.props.user;
        
-        console.log(this.state)
         return  (
             <div className="posts-wrapper">
                 <div className="posts-box">
