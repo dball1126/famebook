@@ -23,7 +23,7 @@ class User < ApplicationRecord
     attr_reader :password
     after_initialize :ensure_session_token
 
-    has_one_attached :photo
+    has_one_attached :image
     
     has_many :posts,
         primary_key: :id, 

@@ -16,7 +16,7 @@
 class Post < ApplicationRecord
     validates :author_id, :body, presence: true
     
-    has_one_attached :photo
+    has_one_attached :image
 
     #Associations
     belongs_to :user,
