@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginContainer from '../session/login_container';
-import SearchBar from '../search/search_bar';
+import SearchBar from '../search/search_container';
 
 export default ({ currentUser, logout}) => {
     const displayLogin = currentUser ? (

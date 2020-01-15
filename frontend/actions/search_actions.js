@@ -10,6 +10,7 @@ const receiveUsers = (users) => {
 }
 
 export const searchUsers = (query) => {
+    debugger
     return (dispatch) => {
         return SearchApiUtil.userSearch(query).then(payload => {
             return dispatch(receiveUsers(payload))

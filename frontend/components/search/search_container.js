@@ -3,7 +3,7 @@ import SearchBar from './search_bar';
 import {searchUsers} from '../../actions/search_actions';
 
 const msp = (props) => {
-    
+        
     return {
 
     }
