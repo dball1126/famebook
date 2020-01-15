@@ -12,7 +12,6 @@ class Api::PostsController < ApplicationController
     end
 
     def create
-        
         @post = Post.new(post_params)
         
         if @post.save
@@ -25,7 +24,7 @@ class Api::PostsController < ApplicationController
     def update
         @post = Post.find_by(id: params[:id])
         if @post.update_attributes(post_params)
-            
+
         else
             render json: @post.errors.full_messages, status: 422
         end
