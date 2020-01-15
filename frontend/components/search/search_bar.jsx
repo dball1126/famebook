@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SearchBar {
+class SearchBar extends React.Component{
     constructor(props){
         super(props);
     }
@@ -8,7 +8,13 @@ class SearchBar {
     render(){
         return (
             <>
-
+                <div className="search-bar-wrapper">
+                    <div className="search-bar-box">
+                        <form action="">
+                            <input placeholder="Search" className="search-input"/>
+                        </form>
+                    </div>
+                </div>
             </>
         )
     }

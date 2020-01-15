@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginContainer from '../session/login_container';
+import SearchBar from '../search/search_bar';
 
 export default ({ currentUser, logout}) => {
     const displayLogin = currentUser ? (
@@ -29,7 +30,7 @@ export default ({ currentUser, logout}) => {
                 <div className="nav-logo">
                     <h1 className="logo">famebook</h1>
                 </div>
-
+                <SearchBar />
                 <div className="nav-buttons">
                         {displayLogin}
                 </div>
