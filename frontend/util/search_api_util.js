@@ -1,7 +1,7 @@
-export const userSearch = (data) => {
+export const userSearch = (query) => {
     return $.ajax({
         method: 'POST',
         url: 'api/users/search',
-        data: {data}
+        data: {query}
     })
 }
