@@ -1,10 +1,10 @@
 import * as SearchApiUtil from '../util/search_api_util';
 
-export const RECEIVE_USERS = 'RECEIVE_USERS';
+export const RECEIVE_SEARCHED_USERS = 'RECEIVE_SEARCHED_USERS';
 
 const receiveUsers = (users) => {
     return {
-        type: RECEIVE_USERS,
+        type: RECEIVE_SEARCHED_USERS,
         data: users
     }
 }
