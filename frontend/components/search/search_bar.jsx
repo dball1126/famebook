@@ -23,7 +23,6 @@ class SearchBar extends React.Component{
         let allData = "";
 
         if (this.state.query.length >= 1) {
-            debugger
             allData = this.props.searchUsers(this.state).then((data) => {
                 let searchUsers;
                 if (data.users){

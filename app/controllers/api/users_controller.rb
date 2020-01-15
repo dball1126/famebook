@@ -5,6 +5,7 @@ class Api::UsersController < ApplicationController
 
     def index
         @users = User.all
+        render "api/posts/index"
     end
 
     def create
