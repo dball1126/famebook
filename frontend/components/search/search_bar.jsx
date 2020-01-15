@@ -9,7 +9,6 @@ class SearchBar extends React.Component{
 
     handleSubmit(e){
         e.preventDefault(); // Used to prevent the page from refreshing
-        debugger
         this.props.searchUsers(this.state)
     }
 
@@ -21,17 +20,19 @@ class SearchBar extends React.Component{
 
     searchData(){
         let allData = "";
-
         if (this.state.query.length >= 1) {
             allData = this.props.searchUsers(this.state).then((data) => {
                 let searchUsers;
-                if (data.users){
-                    searchUsers = Object.values(data.users)
+               
+                
+
+
+                if (!(Object.entries(data.data).length === 0 && data.data.constructor === Object)) {
+                    searchUsers = Object.values(data.data.users)
                 } else {
                     searchUsers = "";
                 }
                 this.setState({results: searchUsers})
-
                 return searchUsers
             })
             return allData;
@@ -53,7 +54,6 @@ class SearchBar extends React.Component{
                     </div>
                 )
             })
-
             return allUsers;
         }
     }

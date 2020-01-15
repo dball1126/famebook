@@ -11,5 +11,4 @@ class Api::SearchesController < ApplicationController
         end
         render 'api/users/index'
     end
-
 end
