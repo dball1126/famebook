@@ -1,0 +1,27 @@
+.search-bar-wrapper {
+    max-width: 537px;
+}
+
+.search-bar-box {
+    width: 537px;
+    height: 23px; 
+    background-color: #ffffff;
+}
+
+.search-input {
+    width: 100%;
+}
+
+.search-data {
+    background-color: #FFFFFF;
+    width: 100%;
+    color: black;
+}
+
+.liveLetters {
+    font-weight: bold;
+}
+
+.signed-in-nav-buttons {
+    
+}

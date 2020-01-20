@@ -12,6 +12,12 @@
     min-width: 980px;
     
 }
+.signed-in-nav-bar-wrapper {
+    background-color: #3d5b98;
+    color: #FFFFFF;
+    height: 42px;
+    min-width: 980px;
+}
 
 .nav-bar-box {
     max-width: 980px;
@@ -36,6 +42,12 @@
 .nav-buttons {
     max-width: 393px;
     height: 65px;
+}
+
+.signed-in-nav-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .email-login {
@@ -63,6 +75,7 @@
     padding: 5px;
     /* padding-top: 0px; */
     margin-top: 2px;
+    cursor: pointer;
 }
 
 .login-form {
@@ -95,4 +108,8 @@ html, body {
 
  #root{
      height: 100%;
+ }
+
+ .no-logo {
+     display: none;
  }

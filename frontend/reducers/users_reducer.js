@@ -18,7 +18,6 @@ const usersReducer = (oldState = {}, action) => {
         case RECEIVE_POST:
             
             oldState.posts.unshift(action.post)
-         
             
             return Object.assign({}, oldState)
         default:
