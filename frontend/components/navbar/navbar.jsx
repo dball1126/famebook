@@ -6,6 +6,8 @@ import SearchBar from '../search/search_container';
 export default ({ currentUser, logout}) => {
     const displayLogin = currentUser ? (
         <div>
+            <img src={"https://yap-dev.s3.amazonaws.com/Screen+Shot+2020-01-19+at+10.09.28+PM.png"}/>
+            <SearchBar />
             <p>Hello, {currentUser.username}</p>
             <button onClick={logout}>Logout</button>
         </div>
@@ -24,13 +26,17 @@ export default ({ currentUser, logout}) => {
             <Link className="btn" to="/signup">Sign Up</Link>
         </div>
     )
+        let logo = "no-logo"
+        debugger
+        if (!currentUser) logo = "logo"
+
     return (
         <div className="nav-bar-wrapper">
             <div className="nav-bar-box">
                 <div className="nav-logo">
-                    <h1 className="logo">famebook</h1>
+                    <h1 className={logo}>famebook</h1>
                 </div>
-                <SearchBar />
+                
                 <div className="nav-buttons">
                         {displayLogin}
                 </div>

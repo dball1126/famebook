@@ -63,6 +63,7 @@
     padding: 5px;
     /* padding-top: 0px; */
     margin-top: 2px;
+    cursor: pointer;
 }
 
 .login-form {
@@ -95,4 +96,8 @@ html, body {
 
  #root{
      height: 100%;
+ }
+
+ .no-logo {
+     display: none;
  }

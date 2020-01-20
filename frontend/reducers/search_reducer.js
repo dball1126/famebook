@@ -5,7 +5,7 @@ const searchReducer = (oldState = {}, action) => {
 
     switch(action.type) {
         case RECEIVE_SEARCHED_USERS:
-            debugger
+            
             if (!action.data.users) return oldState
             return Object.assign({}, Object.values(action.data.users));
         default:
