@@ -23,9 +23,6 @@ class SearchBar extends React.Component{
         if (this.state.query.length >= 1) {
             allData = this.props.searchUsers(this.state).then((data) => {
                 let searchUsers;
-               
-                
-
 
                 if (!(Object.entries(data.data).length === 0 && data.data.constructor === Object)) {
                     searchUsers = Object.values(data.data.users)
@@ -48,9 +45,17 @@ class SearchBar extends React.Component{
         } else {
             let users = this.state.results;
             const allUsers = users.map((user, i) => {
+                let username = user.username.split("").map((char, i) => {
+                    if (this.state.query.includes(char)) {
+                        return (
+                            <b key={i} className="liveLetters">{char}</b>
+                            )
+                        } else { return char}
+                })
+
                 return (
                     <div key={i}>
-                        <h1>{user.username}</h1>
+                        <h1>{username}</h1>
                     </div>
                 )
             })

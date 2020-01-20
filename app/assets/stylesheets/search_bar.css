@@ -17,3 +17,7 @@
     width: 100%;
     color: black;
 }
+
+.liveLetters {
+    font-weight: bold;
+}
