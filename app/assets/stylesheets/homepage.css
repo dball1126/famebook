@@ -9,7 +9,7 @@
     background-color: #3d5b98;
     color: #FFFFFF;
     height: 82px;
-    min-width: 980px;
+    /* min-width: 980px; */
     
 }
 .signed-in-nav-bar-wrapper {
@@ -112,4 +112,22 @@ html, body {
 
  .no-logo {
      display: none;
+ }
+
+ .homepage-wrapper {
+    background-color: #eaebee;
+    min-height: 640px;
+ }
+
+ .homepage-box {
+    margin: 0 auto;
+    display: flex;
+    max-width: 980px;
+ }
+
+ .homepage-box-left {
+     width: 580px;
+ }
+ .homepage-box-right {
+    width: 400px;
  }
