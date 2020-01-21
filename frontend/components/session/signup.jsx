@@ -24,7 +24,8 @@ class Signup extends React.Component{
     render(){
         return (
             <div className="session-form">
-                <h2>Signup</h2>
+                <div className="signup-header1">Create a New Account</div>
+                <div className="signup-header2">It’s quick and easy.</div>
                 <form >
                     <label>Username:
                         <input type="text"

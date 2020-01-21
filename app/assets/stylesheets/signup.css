@@ -1,0 +1,22 @@
+.signup-header1{
+    font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif !important;
+    font-weight: bold !important;
+    letter-spacing: normal;
+    text-rendering: optimizelegibility;
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+
+
+.signup-header2{
+    font-family: 'Freight Sans', Helvetica, Arial, sans-serif !important;
+    font-weight: normal !important;
+    letter-spacing: normal;
+    text-rendering: optimizelegibility;
+    font-size: 19px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+
