@@ -45,7 +45,6 @@ class Signup extends React.Component{
 
                     <label>Birthday</label>
                     <fieldset className="date">
-                    <legend>Start Date </legend>
                     <label htmlFor="month_start">Month</label>
                     <select id="month_start"
                             name="month_start" >
@@ -63,7 +62,7 @@ class Signup extends React.Component{
                         <option>November</option>      
                         <option>December</option>      
                     </select>
-                    <label for="day_start">Day</label>
+                    <label htmlFor="day_start">Day</label>
         <select id="day_start"
                 name="day_start" >
             <option>1</option>      
@@ -112,11 +111,31 @@ class Signup extends React.Component{
             <option>2017</option>      
             <option>2018</option>      
         </select>
-        <span class="inst">(Month-Day-Year)</span>
+        <span className="inst">(Month-Day-Year)</span>
         </fieldset>
+                    
+                    <div>Gender</div>
+                    <div className="gender-box">
+                        <span>
+                            <label htmlFor="">
+                            <input type="radio"/>
+                            Female
+                            </label>
+                        </span>
+                        <span>
+                            <label htmlFor="">
+                            <input type="radio"/>
+                            Male
+                            </label>
+                        </span>
+                    </div>
+                    
+                    <div>
+                    By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. 
+                    You may receive SMS Notifications from us and can opt out any time.
+                    </div>
 
-        
-                    <button onClick={this.handleSubmit}>Sign Up</button>
+                    <button onClick={this.handleSubmit} className="signup-button">Sign Up</button>
                 </form>
             </div>
         )
