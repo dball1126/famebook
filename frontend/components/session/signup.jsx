@@ -37,6 +37,18 @@ class Signup extends React.Component{
             this.setState({[type]: e.target.value })
         }
     }
+
+    toggleInputError(e, type, value) {
+        
+        if (this.props.sessionErrors.join(" ").includes(type)) {
+            this.setState({
+                [`${type}Error`]: value,
+                [`${type}Border`]: !value
+            })
+        }
+    }
+
+
     componentDidUpdate(prevProps){
         
         if (this.props !== prevProps) {
@@ -91,6 +103,8 @@ class Signup extends React.Component{
                                     type="text"
                                     className={`firstname ${fnameBorder ? "e-f-border" : ""}`}
                                     placeholder="First name"
+                                    onFocus={(e) => this.toggleInputError(e, "fname", true)}
+                                    onBlur={(e) => this.toggleInputError(e, "fname", false) }
                                     value={this.state.first_name}
                                     onChange={this.handleInput('first_name')}
                             />
@@ -124,6 +138,7 @@ class Signup extends React.Component{
                                 className={`email-password-signup ${newemailBorder ? "e-n-border" : ""}`}
                                 placeholder="email"
                                 value={this.state.email}
+
                                 onChange={this.handleInput('email')}/>
                         <SignUpErrors
                                     typeOf="newemail"

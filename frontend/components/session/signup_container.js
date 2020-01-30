@@ -16,7 +16,8 @@ const mapStateToProps = (state) => {
     let gendBorder = false;
     let newemailError = false;
     let newemailBorder = false;
-    
+    let sessionErrors = state.sessionErrors
+
     state.sessionErrors.forEach(error => {
         
         if(error.includes("fname")){
@@ -62,7 +63,8 @@ const mapStateToProps = (state) => {
         gendError: gendError,
         gendBorder: gendBorder,
         newemailError: newemailError,
-        newemailBorder: newemailBorder
+        newemailBorder: newemailBorder,
+        sessionErrors: sessionErrors
     }
 }
 
