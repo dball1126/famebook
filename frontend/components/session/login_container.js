@@ -6,7 +6,7 @@ import {clearErrors} from '../../actions/session_actions';
 const mapStateToProps = (state) => {
     let errorsTrue = false;
     let loginErrorsBorder = false;
-    debugger
+    
     state.sessionErrors.forEach(error => {
     if(error.toLowerCase().includes("invalid credentials")){
         errorsTrue = true;
@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
     }
 
     })
-    debugger
+    
     return {
         errorsTrue: errorsTrue,
         loginErrorsBorder: loginErrorsBorder

@@ -42,7 +42,6 @@ class Login extends React.Component {
 
         return (
             <>
-                {/* <div className="login-errors" style={{display: errors ? '' : 'none'}}> */}
                     <LoginErrors 
                         typeOf="login"
                         text="The email of phone number you've entered doesn't match
@@ -50,7 +49,6 @@ class Login extends React.Component {
                         errorTrue={errorsTrue}
                         borderTrue={loginErrorsBorder}
                     />
-                {/* </div> */}
             <div className="login-session-form">
                 <form className="login-form">
                     <div className="email-login">

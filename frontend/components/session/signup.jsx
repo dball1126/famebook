@@ -42,7 +42,7 @@ class Signup extends React.Component{
         if (this.props !== prevProps) {
             let {fnameError, fnameBorder, lnameBorder, lnameError,
                  newemailBorder, newemailError, newpassBorder, newpassError,
-                } = this.props
+                 gendBorder, gendError} = this.props
             
             this.setState({
                 fnameError: fnameError,
@@ -52,7 +52,10 @@ class Signup extends React.Component{
                 newemailError: newemailError,
                 newemailBorder: newemailBorder,
                 newpassBorder: newpassBorder,
-                newpassError: newpassError
+                newpassError: newpassError,
+                gendBorder: gendBorder,
+                gendError: gendError
+
             })
         }
 
@@ -73,7 +76,8 @@ class Signup extends React.Component{
 
     render(){
        let {fnameBorder, fnameError, lnameBorder, lnameError,
-            newemailBorder, newemailError, newpassBorder, newpassError} = this.state
+            newemailBorder, newemailError, newpassBorder, newpassError,
+            gendBorder, gendError} = this.state
         
         return (
             <div className="session-form">
@@ -110,7 +114,6 @@ class Signup extends React.Component{
                                     text="What's your name?"
                                     errorTrue={lnameError}
                                     borderTrue={lnameBorder}
-
                             />
                             
                         </label>
@@ -253,18 +256,27 @@ class Signup extends React.Component{
         </div>
                     <div className="gender-header">Gender</div>
                     <div className="gender-box">
-                        <span className="span-gender-f">
+                            <SignUpErrors
+                                    typeOf="gend"
+                                    text="Please choose a gender.
+                                          You can change who can see this later."
+                                    errorTrue={gendError}
+                                    borderTrue={gendBorder}
+                            />
+                        <span className={`span-gender-f ${gendBorder ? "e-m-border" : ""}`}>
                             <input type="radio" 
                             id="female-id"
                             onChange={this.handleInput('gender')}
+                            className={`gender ${gendBorder ? "e-m-border" : ""}`}
                             value='female'/>
                             <label htmlFor="female-id" className="gender-label">
                                 Female
                             </label>
                         </span>
-                        <span className="span-gender-m">
+                        <span className={`span-gender-m ${gendBorder ? "e-m-border" : ""}`}>
                             <input type="radio" 
-                                   id="male-id" 
+                                   id="male-id"
+                                   
                                    onChange={this.handleInput('gender')}
                                    value='male'/>
                             <label htmlFor="male-id" className="gender-label">
