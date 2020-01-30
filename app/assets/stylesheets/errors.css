@@ -5,6 +5,7 @@
     color: #FFFFFF;
     margin-left: -180px;
     position: absolute;
+    border-radius: 3px;
 }
 
 .actual-error {

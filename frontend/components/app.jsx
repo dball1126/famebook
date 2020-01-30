@@ -9,10 +9,8 @@ import PostsContainer from './posts/posts_index_container';
 const App = () => {
     return (
         <div className="main-div">
-            {/* <NavBarContainer /> */}
             <AuthRoute path ="/" component={HomepageContainer}/>
             <ProtectedRoute path='/posts' component={PostsContainer}/>
-            
         </div>
     )
 }

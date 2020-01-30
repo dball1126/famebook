@@ -1,7 +1,9 @@
 import React from 'react';
+import SignUpErrors from '../errors/signup_errors';
 
 class Signup extends React.Component{
     constructor(props){
+        debugger
         super(props);
         this.state = {
             month: "01",
@@ -12,7 +14,12 @@ class Signup extends React.Component{
             first_name: '',
             last_name: '',
             email: '',
-            password: ''
+            password: '',
+            fnameError: this.props.fnameError,
+            fnameBorder: this.props.fnameBorder,
+            lnameError: this.props.lnameError,
+            lnameBorder: this.props.lnameBorder
+            
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -22,6 +29,20 @@ class Signup extends React.Component{
             this.setState({[type]: e.target.value })
         }
     }
+    componentDidUpdate(prevProps){
+        debugger
+        if (this.props !== prevProps) {
+            this.setState({
+                fnameError: this.props.state.sessionErrors.includes("fname"),
+                fnameBorder: this.props.state.sessionErrors.includes("fname"),
+                lnameBorder: this.props.state.sessionErrors.includes("lname"),
+                lnameError: this.props.state.sessionErrors.includes("lname"),
+
+
+            })
+        }
+    }
+
     handleSubmit(e){
         e.preventDefault();
         let {month, day, year, birthday} = this.state
@@ -42,18 +63,37 @@ class Signup extends React.Component{
 
                     <div className="signup-fullname">
                         <label className="names">
-                            <input type="text"
+                            <input 
+                                    type="text"
                                     className="firstname"
                                     placeholder="First name"
                                     value={this.state.first_name}
-                                    onChange={this.handleInput('first_name')}/>
+                                    onChange={this.handleInput('first_name')}
+                            />
+                            <SignUpErrors
+                                    typeOf="fname"
+                                    text="What's your name?"
+                                    errorTrue={this.state.fnameError}
+                                    borderTrue={this.state.fnameBorder}
+
+                            />
                         </label>
                         <label className="names">
-                            <input type="text"
+                            <input 
+                                    type="text"
                                     className="lastname"
                                     placeholder="Last name"
                                     value={this.state.last_name}
-                                    onChange={this.handleInput('last_name')}/>
+                                    onChange={this.handleInput('last_name')}
+                            />
+                            <SignUpErrors
+                                    typeOf="lname"
+                                    text="What's your name?"
+                                    errorTrue={this.state.lnameError}
+                                    borderTrue={this.state.lnameBorder}
+
+                            />
+                            
                         </label>
                     </div>
 
