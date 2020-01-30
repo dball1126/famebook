@@ -142,7 +142,7 @@ class Signup extends React.Component{
                         <SignUpErrors
                                     typeOf="newpass"
                                     text="Enter a combination of at least six numbers,
-                                          letters and punctuation marks (like ! and)."
+                                          letters and punctuation marks (like ! and &)."
                                     errorTrue={newpassError}
                                     borderTrue={newpassBorder}
                         />
@@ -256,13 +256,7 @@ class Signup extends React.Component{
         </div>
                     <div className="gender-header">Gender</div>
                     <div className="gender-box">
-                            <SignUpErrors
-                                    typeOf="gend"
-                                    text="Please choose a gender.
-                                          You can change who can see this later."
-                                    errorTrue={gendError}
-                                    borderTrue={gendBorder}
-                            />
+                           
                         <span className={`span-gender-f ${gendBorder ? "e-m-border" : ""}`}>
                             <input type="radio" 
                             id="female-id"
@@ -283,6 +277,13 @@ class Signup extends React.Component{
                                 Male
                             </label>
                         </span>
+                        <SignUpErrors
+                                    typeOf="gend"
+                                    text="Please choose a gender.
+                                          You can change who can see this later."
+                                    errorTrue={gendError}
+                                    borderTrue={gendBorder}
+                            />
                     </div>
                     
                     <div className="terms-box">

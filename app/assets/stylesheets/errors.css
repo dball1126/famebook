@@ -32,3 +32,38 @@
     border: 1px solid red;
 
 }
+
+.fname-e-icon {
+    margin-top: -27px;
+    position: absolute;
+    margin-left: 162px;
+
+}
+.lname-e-icon {
+    margin-top: -27px;
+    position: absolute;
+    margin-left: 162px;
+}
+
+.newemail-e-icon {
+    margin-top: -27px;
+    position: absolute;
+    margin-left: 363px;
+}
+.newpass-e-icon {
+    margin-top: -27px;
+    position: absolute;
+    margin-left: 363px;
+}
+.gend-e-icon {
+    margin-right: 19px;
+    float: right;
+}
+.bday-e-icon {
+    
+}
+
+.signup-error svg {
+    color: #b84947;
+    font-size: 20px;
+}
