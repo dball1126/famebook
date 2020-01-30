@@ -4,14 +4,18 @@ class Signup extends React.Component{
     constructor(props){
         super(props);
         this.state = {
+            month: '',
+            day: '',
+            year: '',
+            birthday: '',
+            gender: '',
             first_name: '',
             last_name: '',
             email: '',
-            password: '',
-            birthday: '',
-            gender: ''
+            password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleInput = this.handleInput.bind(this);
     }
     handleInput(type){
         return (e) => {
@@ -20,6 +24,19 @@ class Signup extends React.Component{
     }
     handleSubmit(e){
         e.preventDefault();
+        let {month, day, year, birthday} = this.state
+
+        if (year === "") year = "1985";
+        if (month === "") month = "01";
+        if (day === "") day = "01";
+            birthday = `${year}-${month}-${day}`;
+            this.state.birthday = birthday;
+
+            // delete this.state.year
+            // delete this.state.month
+            // delete this.state.day
+            debugger
+            
         this.props.signup(this.state)
             .then( () => this.props.history.push('/'))
     }
@@ -68,10 +85,12 @@ class Signup extends React.Component{
                             Birthday
                         </div> 
 
-                    <fieldset className="date">
+                    <fieldset className="date" >
                     <label htmlFor="month_start">Month</label>
                     <select id="month_start"
-                            name="month_start" >
+                            name="month_start" 
+                            value={this.state.month} 
+                            onChange={this.handleInput('month')}>
 
                         <option>January</option>      
                         <option>February</option>      
@@ -88,7 +107,9 @@ class Signup extends React.Component{
                     </select>
                     <label htmlFor="day_start">Day</label>
         <select id="day_start"
-                name="day_start" >
+                name="day_start" 
+                value={this.state.day} 
+                onChange={this.handleInput('day')}>
             <option>1</option>      
             <option>2</option>      
             <option>3</option>      
@@ -123,7 +144,9 @@ class Signup extends React.Component{
         </select> 
         <label htmlFor="year_start">Year</label>
         <select id="year_start"
-                name="year_start" >
+                name="year_start"
+                value={this.state.year} 
+                onChange={this.handleInput('year')} >
             <option>1985</option>      
             <option>1986</option>      
             <option>1987</option>      
@@ -166,13 +189,19 @@ class Signup extends React.Component{
                     <div className="gender-header">Gender</div>
                     <div className="gender-box">
                         <span className="span-gender-f">
-                            <input type="radio" id="femail-id"/>
+                            <input type="radio" 
+                            id="female-id"
+                            onChange={this.handleInput('gender')}
+                            value='female'/>
                             <label htmlFor="female-id" className="gender-label">
                                 Female
                             </label>
                         </span>
                         <span className="span-gender-m">
-                            <input type="radio" id="male-id"/>
+                            <input type="radio" 
+                                   id="male-id" 
+                                   onChange={this.handleInput('gender')}
+                                   value='male'/>
                             <label htmlFor="male-id" className="gender-label">
                                 Male
                             </label>

@@ -30,8 +30,8 @@ class Api::UsersController < ApplicationController
                                      :first_name, 
                                      :last_name,
                                      :gender,
-                                     :birthday
-                                     :image,
+                                     :birthday,
+                                     :image
                                      )
     end
 end
