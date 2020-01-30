@@ -4,9 +4,12 @@ class Signup extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            username: '',
+            first_name: '',
+            last_name: '',
             email: '',
-            password: ''
+            password: '',
+            birthday: '',
+            gender: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -24,7 +27,7 @@ class Signup extends React.Component{
     render(){
         return (
             <div className="session-form">
-                <div className="signup-header1">Create a New Account</div>
+                <div className="signup-header1">Sign Up</div>
                 <div className="signup-header2">It’s quick and easy.</div>
                 <form className="signup-form">
                     <label>Username:
