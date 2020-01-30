@@ -8,18 +8,45 @@ const mapStateToProps = (state) => {
     let fnameError = false;
     let lnameBorder = false;
     let lnameError = false;
+    let newpassError = false;
+    let newpassBorder = false;
+    let bdayError = false;
+    let bdayBorder = false;
+    let gendError = false;
+    let gendBorder = false;
+    let newemailError = false;
+    let newemailBorder = false;
     
     state.sessionErrors.forEach(error => {
         
         if(error.includes("fname")){
             fnameError = true;
             fnameBorder = true;
-        }
-        
+        } 
 
         if (error.includes('lname')){
             lnameError= true
             lnameBorder= true
+        }
+
+        if (error.includes('newpass')){
+            newpassError = true
+            newpassBorder = true
+        }
+
+        if (error.includes('bday')){
+            bdayError = true
+            bdayBorder = true
+        }
+
+        if (error.includes('gend')){
+            gendError = true
+            gendBorder = true
+        }
+        
+        if (error.includes('newemail')){
+            newemailError = true
+            newemailBorder = true
         }
     })
     
@@ -27,7 +54,15 @@ const mapStateToProps = (state) => {
         fnameError: fnameError,
         fnameBorder: fnameBorder,
         lnameError: lnameError,
-        lnameBorder: lnameBorder
+        lnameBorder: lnameBorder,
+        newpassError: newpassError,
+        newpassBorder: newpassBorder,
+        bdayBorder: bdayBorder,
+        bdayError: bdayError,
+        gendError: gendError,
+        gendBorder: gendBorder,
+        newemailError: newemailError,
+        newemailBorder: newemailBorder
     }
 }
 

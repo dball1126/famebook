@@ -21,10 +21,14 @@ class User < ApplicationRecord
 
     validates :first_name, presence: {message: "fname"}
     validates :last_name, presence: {message: "lname"}
+    validates :birthday, presence: {message: "bday"}
+    validates :gender, presence: {message: "gend"}
+    validates :email, presence: {message: "newemail"}
     validates :session_token, :password_digest, presence: true, uniqueness: true
     validates :password, length: {minimum: 8, allow_nil: true, message: "newpass"}
 
     attr_reader :password
+    
     after_initialize :ensure_session_token
 
     has_one_attached :image

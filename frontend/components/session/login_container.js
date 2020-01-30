@@ -8,10 +8,7 @@ const mapStateToProps = (state) => {
     let loginErrorsBorder = false;
     
     state.sessionErrors.forEach(error => {
-    if(   error.toLowerCase().includes("password") || 
-          error.toLowerCase().includes("email") ||
-          error.toLowerCase().includes("invalid credentials"));
-
+    if( error.toLowerCase().includes("invalid credentials"));
         errorsTrue = true;
         loginErrorsBorder = true;
     })
