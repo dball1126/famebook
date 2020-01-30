@@ -30,23 +30,40 @@ class Signup extends React.Component{
                 <div className="signup-header1">Sign Up</div>
                 <div className="signup-header2">It’s quick and easy.</div>
                 <form className="signup-form">
-                    <label>Username:
+
+                    <div className="signup-fullname">
+                        <label className="names">
+                            <input type="text"
+                                    className="firstname"
+                                    placeholder="First name"
+                                    value={this.state.first_name}
+                                    onChange={this.handleInput('first_name')}/>
+                        </label>
+                        <label className="names">
+                            <input type="text"
+                                    className="lastname"
+                                    placeholder="Last name"
+                                    value={this.state.last_name}
+                                    onChange={this.handleInput('last_name')}/>
+                        </label>
+                    </div>
+
+                    <label className="signup-email-label">
                         <input type="text"
-                                value={this.state.username}
-                                onChange={this.handleInput('username')}/>
-                    </label>
-                    <label>Email:
-                        <input type="text"
+                                className="email-password-signup"
+                                placeholder="email"
                                 value={this.state.email}
                                 onChange={this.handleInput('email')}/>
                     </label>
-                    <label>Password:
+                    <label className="signup-password-label">
                         <input type="password"
+                                className="email-password-signup"
+                                placeholder="New password"
                                 value={this.state.password}
                                 onChange={this.handleInput('password')}/>
                     </label>
 
-                    <label>Birthday</label>
+                    <label className="birth-label">Birthday</label>
                     <fieldset className="date">
                     <label htmlFor="month_start">Month</label>
                     <select id="month_start"

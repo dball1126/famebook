@@ -87,3 +87,49 @@ fieldset.date select:hover
     border-radius: 4px;
     font-weight: bold;
 }
+
+.signup-fullname {
+  width: 399px;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.signup-fullname input{ 
+  /* padding: 8px 10px;
+  border-color: #bdc7d8;
+  border-radius: 5px;
+  margin: 0; */
+   padding: 8px 10px;
+   border-color: #bdc7d8;
+   border-radius: 5px;
+}
+
+.firstname {}
+
+.lastname {}
+
+.names {
+  width: 194px;
+  margin-right: 8px;
+}
+
+.email-password-signup{
+  padding: 8px 10px;
+  border-color: #bdc7d8;
+  border-radius: 5px;
+  padding: 8px 10px;
+  width: 368px;
+}
+
+.signup-email-label {
+  width: 399px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.signup-password-label {
+  width: 399px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
