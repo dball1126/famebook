@@ -52,7 +52,6 @@ class Posts extends React.Component {
         let username = this.props.user.username;
         return(
             <>
-                
                 <form onSubmit={this.handleSubmit}>
                     <div className="postform-headline">
                         <span>Create Post</span>
@@ -69,7 +68,6 @@ class Posts extends React.Component {
             </>
         )
     }
-
     
     render(){
         let posts = this.state.posts;

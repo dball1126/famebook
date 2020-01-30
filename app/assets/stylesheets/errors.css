@@ -1,0 +1,13 @@
+.login-errors {
+    width: 160px;
+    height: 60px;
+    background-color: #bb1e1e;
+    color: #FFFFFF;
+    margin-left: -180px;
+    position: absolute;
+}
+
+.actual-error {
+    text-align: center;
+    padding: 10px;
+}

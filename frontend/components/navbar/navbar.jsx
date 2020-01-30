@@ -16,16 +16,9 @@ export default ({ currentUser, logout}) => {
             <LoginContainer className="btn" to="/Login">Login</LoginContainer>
         </>
     )
-    const displaySignup = currentUser ? (
-        <div>
-            <p>Hello, {currentUser.username}</p>
-            <button onClick={logout}>Logout</button>
-        </div>
-    ) : (
-        <div>
-            <Link className="btn" to="/signup">Sign Up</Link>
-        </div>
-    )
+        
+        
+
         let logo = "no-logo";
         let navButtons = "signed-in-nav-buttons";
         let navWrapper = "signed-in-nav-bar-wrapper";

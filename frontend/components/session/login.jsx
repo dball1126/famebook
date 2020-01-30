@@ -6,7 +6,9 @@ class Login extends React.Component {
         this.state = {
             username: '',
             email: '',
-            password: ''
+            password: '',
+            errors: [],
+            errorsTrue: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -21,10 +23,31 @@ class Login extends React.Component {
         this.props.login(this.state)
     }
 
-    render() {
+    errors() {
+        if (!this.props.errorsTrue) {
+            return "";
+        } else {
+    
+        return this.props.errors.map((error, i) => {
         return (
-            <div className="login-session-form">
 
+                <div key={i} className="actual-error">
+                    {error}
+                </div>
+                )
+            })
+        }
+    }
+
+    render() {
+        let errors = this.props.errorsTrue;
+
+        return (
+            <>
+                <div className="login-errors" style={{display: errors ? '' : 'none'}}>
+                    {this.errors()}
+                </div>
+            <div className="login-session-form">
                 <form className="login-form">
                     <div className="email-login">
                         <div className="email-label"><label htmlFor="email">Email:</label></div>
@@ -47,6 +70,7 @@ class Login extends React.Component {
                 </form>
                 
             </div>
+            </>
         )
     }
 }
