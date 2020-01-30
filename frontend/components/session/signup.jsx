@@ -63,7 +63,11 @@ class Signup extends React.Component{
                                 onChange={this.handleInput('password')}/>
                     </label>
 
-                    <label className="birth-label">Birthday</label>
+                    <div className="birth-box">
+                        <div className="birth-header">
+                            Birthday
+                        </div> 
+
                     <fieldset className="date">
                     <label htmlFor="month_start">Month</label>
                     <select id="month_start"
@@ -120,6 +124,30 @@ class Signup extends React.Component{
         <label htmlFor="year_start">Year</label>
         <select id="year_start"
                 name="year_start" >
+            <option>1985</option>      
+            <option>1986</option>      
+            <option>1987</option>      
+            <option>1988</option>      
+            <option>1989</option>      
+            <option>1990</option>      
+            <option>1991</option>      
+            <option>1992</option>      
+            <option>1993</option>      
+            <option>1994</option>      
+            <option>1995</option>      
+            <option>1996</option>      
+            <option>1997</option>      
+            <option>1998</option>      
+            <option>1999</option>      
+            <option>2000</option>      
+            <option>2001</option>      
+            <option>2002</option>      
+            <option>2003</option>      
+            <option>2004</option>      
+            <option>2005</option>      
+            <option>2006</option>      
+            <option>2007</option>      
+            <option>2008</option>      
             <option>2009</option>      
             <option>2010</option>      
             <option>2011</option>      
@@ -130,29 +158,32 @@ class Signup extends React.Component{
             <option>2016</option>      
             <option>2017</option>      
             <option>2018</option>      
+            <option>2019</option>      
+            <option>2020</option>      
         </select>
-        <span className="inst">(Month-Day-Year)</span>
         </fieldset>
-                    
-                    <div>Gender</div>
+        </div>
+                    <div className="gender-header">Gender</div>
                     <div className="gender-box">
-                        <span>
-                            <label htmlFor="">
-                            <input type="radio"/>
-                            Female
+                        <span className="span-gender-f">
+                            <input type="radio" id="femail-id"/>
+                            <label htmlFor="female-id" className="gender-label">
+                                Female
                             </label>
                         </span>
-                        <span>
-                            <label htmlFor="">
-                            <input type="radio"/>
-                            Male
+                        <span className="span-gender-m">
+                            <input type="radio" id="male-id"/>
+                            <label htmlFor="male-id" className="gender-label">
+                                Male
                             </label>
                         </span>
                     </div>
                     
-                    <div>
-                    By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. 
-                    You may receive SMS Notifications from us and can opt out any time.
+                    <div className="terms-box">
+                    <p className="terms-content"> 
+                        By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. 
+                        You may receive SMS Notifications from us and can opt out any time.
+                    </p>
                     </div>
 
                     <button onClick={this.handleSubmit} className="signup-button">Sign Up</button>
