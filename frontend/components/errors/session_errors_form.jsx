@@ -4,7 +4,7 @@ import { FaExclamationCircle } from 'react-icons/fa';
 const sessionErrorsForm = ({typeOf, text, errorTrue, borderTrue}) => {
     
     return (
-        <div className="signup-error">
+        <div className={`signup-error-${typeOf}`}>
             <FaExclamationCircle 
                 style={borderTrue ? {} : { display: "none" }}
                 className={`e-icon ${typeOf}-e-icon`}

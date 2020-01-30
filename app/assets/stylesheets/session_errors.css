@@ -1,0 +1,143 @@
+.login-errors {
+    width: 160px;
+    height: 60px;
+    background-color: #bb1e1e;
+    color: #FFFFFF;
+    margin-left: -180px;
+    position: absolute;
+    border-radius: 3px;
+}
+
+.actual-error {
+    text-align: center;
+    padding: 10px;
+}
+
+.session-form .e-f-border {
+    border-color: red;
+}
+
+.session-form .e-l-border {
+    border-color: red;
+}
+
+.session-form .e-n-border {
+    border-color: red;
+}
+.session-form .e-p-border {
+    border-color: red;
+}
+
+.gender-box .e-m-border {
+    border: 1px solid red;
+
+}
+
+.fname-e-icon {
+    margin-top: -27px;
+    position: absolute;
+    margin-left: 162px;
+
+}
+.lname-e-icon {
+    margin-top: -27px;
+    position: absolute;
+    margin-left: 162px;
+}
+
+.newemail-e-icon {
+    margin-top: -27px;
+    position: absolute;
+    margin-left: 363px;
+}
+.newpass-e-icon {
+    margin-top: -27px;
+    position: absolute;
+    margin-left: 363px;
+}
+.gend-e-icon {
+    float: right;
+    margin-left: 20px;
+    margin-top: 5px;
+
+}
+.bday-e-icon {
+    
+}
+
+.signup-form svg {
+    color: #b84947;
+    font-size: 20px;
+}
+
+.signup-error-fname .message-icon{
+    width: 120px;
+    height: 15px;
+    background-color: #be4b49;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35);
+    color: #fff;
+    margin-left: -155px;
+    margin-top: -43px;
+    font-size: 13px;
+    padding: 13px;
+
+}
+.signup-error-lname .message-icon{
+    width: 120px;
+    position: absolute;
+    height: 15px;
+    background-color: #be4b49;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35);
+    color: #fff;
+    margin-left: 20px;
+    margin-top: 6px;
+    font-size: 13px;
+    padding: 13px;
+}
+
+.signup-error-newemail .message-icon{
+    width: 326px;
+    background-color: #be4b49;
+    border: 0;
+    border-radius: 2px;
+    position: absolute;
+    box-shadow: 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35);
+    color: #fff;
+    margin-left: -359px;
+    margin-top: -45px;
+    font-size: 13px;
+    padding: 13px;
+
+}
+.signup-error-newpass .message-icon{
+    width: 326px;
+    background-color: #be4b49;
+    border: 0;
+    border-radius: 2px;
+    position: absolute;
+    box-shadow: 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35);
+    color: #fff;
+    margin-left: -359px;
+    margin-top: -45px;
+    font-size: 13px;
+    padding: 13px;
+
+}
+.signup-error-gend .message-icon{
+    width: 326px;
+    background-color: #be4b49;
+    border: 0;
+    border-radius: 2px;
+    position: absolute;
+    box-shadow: 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35);
+    color: #fff;
+    margin-left: -538px;
+    margin-top: -9px;
+    font-size: 13px;
+    padding: 13px;
+
+}
