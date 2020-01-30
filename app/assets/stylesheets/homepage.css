@@ -117,6 +117,7 @@ html, body {
  .homepage-wrapper {
     background-color: #edf0f5;
     min-height: 640px;
+    font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
  }
 
  .homepage-box {
@@ -133,15 +134,25 @@ html, body {
     width: 400px;
  }
 
- .homtpage-left-content {
+ .homepage-left-content {
      width: 565px;
      height: 66px;
+     margin-top: 14px;
+     padding-bottom: 10px;
+     font-size: 15px;
  }
 
  .homepage-left-content span {
      font-weight: bold;
      font-family: Arial, Helvetica, sans-serif;
+     font-size: 17px;
+     margin-left: 15px;
  }
+
+.homepage-left-content img {
+    height: 56px;
+    width: 56px;
+}
 
  .homepage-left-heading {
      color: #333333;
@@ -149,5 +160,4 @@ html, body {
      font-size: 28px;
      padding: 42px 0 24px;
      font-weight: bold;
-     height: 138px;
  }
