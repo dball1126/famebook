@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import {signup} from '../../actions/session_actions';
 import Signup from './signup';
+import {clearErrors} from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
     let fnameBorder = false;
@@ -9,15 +10,19 @@ const mapStateToProps = (state) => {
     let lnameError = false;
     
     state.sessionErrors.forEach(error => {
-        if(error.includes("fname"))
+        
+        if(error.includes("fname")){
             fnameError = true;
             fnameBorder = true;
+        }
+        
 
-        if (error.includes('lname'))
+        if (error.includes('lname')){
             lnameError= true
             lnameBorder= true
+        }
     })
-  
+    
     return {
         fnameError: fnameError,
         fnameBorder: fnameBorder,
@@ -28,7 +33,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        signup: user => dispatch(signup(user))
+        signup: user => dispatch(signup(user)),
+        clearErrors: () => dispatch(clearErrors())
     }
 }
 

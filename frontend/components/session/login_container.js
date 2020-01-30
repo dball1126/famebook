@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import {login} from '../../actions/session_actions';
 import Login from './login';
+import {clearErrors} from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
     let errorsTrue = false;
@@ -14,7 +15,7 @@ const mapStateToProps = (state) => {
         errorsTrue = true;
         loginErrorsBorder = true;
     })
-    debugger
+    
     return {
         errorsTrue: errorsTrue,
         loginErrorsBorder: loginErrorsBorder
@@ -23,7 +24,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        login: user => dispatch(login(user))
+        login: user => dispatch(login(user)),
+        clearErrors: () => dispatch(clearErrors())
     }
 }
 

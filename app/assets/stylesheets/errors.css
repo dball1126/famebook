@@ -13,6 +13,10 @@
     padding: 10px;
 }
 
-.session-form .e-border {
+.session-form .e-f-border {
+    border-color: red;
+}
+
+.session-form .e-l-border {
     border-color: red;
 }

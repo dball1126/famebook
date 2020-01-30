@@ -41,10 +41,13 @@ class Signup extends React.Component{
                 lnameError: lnameError,
             })
         }
+
     }
 
     handleSubmit(e){
         e.preventDefault();
+        this.props.clearErrors();
+
         let {month, day, year, birthday} = this.state
 
             birthday = `${year}-${month}-${day}`;
@@ -67,7 +70,7 @@ class Signup extends React.Component{
                         <label className="names">
                             <input 
                                     type="text"
-                                    className={`firstname ${fnameBorder ? "e-border" : ""}`}
+                                    className={`firstname ${fnameBorder ? "e-f-border" : ""}`}
                                     placeholder="First name"
                                     value={this.state.first_name}
                                     onChange={this.handleInput('first_name')}
@@ -83,7 +86,7 @@ class Signup extends React.Component{
                         <label className="names">
                             <input 
                                     type="text"
-                                    className={`lastname ${lnameBorder ? "e-border" : ""}`}
+                                    className={`lastname ${lnameBorder ? "e-l-border" : ""}`}
                                     placeholder="Last name"
                                     value={this.state.last_name}
                                     onChange={this.handleInput('last_name')}
