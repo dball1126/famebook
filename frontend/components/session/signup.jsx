@@ -15,17 +15,17 @@ class Signup extends React.Component{
             last_name: '',
             email: '',
             password: '',
-            fnameError: this.props.fnameError,
+            fnameError: false,
             fnameBorder: this.props.fnameBorder,
-            lnameError: this.props.lnameError,
+            lnameError: false,
             lnameBorder: this.props.lnameBorder,
-            newpassError: this.props.newpassError,
+            newpassError: false,
             newpassBorder: this.props.newpassBorder,
-            bdayError: this.props.bdayError,
+            bdayError: false,
             bdayBorder: this.props.bdayBorder,
-            gendError: this.props.gendError,
+            gendError: false,
             gendBorder: this.props.gendBorder,
-            newemailError: this.props.newemailError,
+            newemailError: false,
             newemailBorder: this.props.newemailBorder
             
         };
@@ -120,6 +120,8 @@ class Signup extends React.Component{
                                     type="text"
                                     className={`lastname ${lnameBorder ? "e-l-border" : ""}`}
                                     placeholder="Last name"
+                                    onFocus={(e) => this.toggleInputError(e, "lname", true)}
+                                    onBlur={(e) => this.toggleInputError(e, "lname", false) }
                                     value={this.state.last_name}
                                     onChange={this.handleInput('last_name')}
                             />
@@ -137,8 +139,9 @@ class Signup extends React.Component{
                         <input type="text"
                                 className={`email-password-signup ${newemailBorder ? "e-n-border" : ""}`}
                                 placeholder="email"
+                                onFocus={(e) => this.toggleInputError(e, "newemail", true)}
+                                onBlur={(e) => this.toggleInputError(e, "newemail", false) }
                                 value={this.state.email}
-
                                 onChange={this.handleInput('email')}/>
                         <SignUpErrors
                                     typeOf="newemail"
@@ -152,6 +155,8 @@ class Signup extends React.Component{
                         <input type="password"
                                 className={`email-password-signup ${newpassBorder ? "e-p-border" : ""}`}
                                 placeholder="New password"
+                                onFocus={(e) => this.toggleInputError(e, "newpass", true)}
+                                onBlur={(e) => this.toggleInputError(e, "newpass", false) }
                                 value={this.state.password}
                                 onChange={this.handleInput('password')}/>
                         <SignUpErrors
@@ -171,7 +176,7 @@ class Signup extends React.Component{
                     <fieldset className="date" >
                     <label htmlFor="month_start">Month</label>
                     <select id="month_start"
-                            name="month_start" 
+                            name="month_start"
                             value={this.state.month} 
                             onChange={this.handleInput('month')}>
 
@@ -270,24 +275,32 @@ class Signup extends React.Component{
         </fieldset>
         </div>
                     <div className="gender-header">Gender</div>
-                    <div className="gender-box">
+                    <div className="gender-box" >
                            
                         <span className={`span-gender-f ${gendBorder ? "e-m-border" : ""}`}>
                             <input type="radio" 
-                            id="female-id"
-                            onChange={this.handleInput('gender')}
-                            className={`gender ${gendBorder ? "e-m-border" : ""}`}
-                            value='female'/>
+                                    id="female-id"
+                                    name="gender"
+                                    onChange={this.handleInput('gender')}
+                                    onFocus={(e) => this.toggleInputError(e, "gend", true)}
+                                    onBlur={(e) => this.toggleInputError(e, "gend", false) }
+                                    className={`gender ${gendBorder ? "e-m-border" : ""}`}
+                                    value='female'
+                            />
                             <label htmlFor="female-id" className="gender-label">
                                 Female
                             </label>
                         </span>
                         <span className={`span-gender-m ${gendBorder ? "e-m-border" : ""}`}>
-                            <input type="radio" 
+                            <input 
+                                   type="radio" 
                                    id="male-id"
-                                   
+                                   name="gender"
+                                   onFocus={(e) => this.toggleInputError(e, "gend", true)}
+                                   onBlur={(e) => this.toggleInputError(e, "gend", false) }
                                    onChange={this.handleInput('gender')}
-                                   value='male'/>
+                                   value='male'
+                            />
                             <label htmlFor="male-id" className="gender-label">
                                 Male
                             </label>
@@ -316,3 +329,6 @@ class Signup extends React.Component{
 }
 
 export default Signup;
+
+
+<div class="error-box newemail-error-box" style="display: none;"><p>You'll use this to log in and if you ever need to reset your password.</p></div>

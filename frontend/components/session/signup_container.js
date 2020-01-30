@@ -21,32 +21,26 @@ const mapStateToProps = (state) => {
     state.sessionErrors.forEach(error => {
         
         if(error.includes("fname")){
-            fnameError = true;
             fnameBorder = true;
         } 
 
         if (error.includes('lname')){
-            lnameError= true
             lnameBorder= true
         }
 
         if (error.includes('newpass')){
-            newpassError = true
             newpassBorder = true
         }
 
         if (error.includes('bday')){
-            bdayError = true
             bdayBorder = true
         }
 
         if (error.includes('gend')){
-            gendError = true
             gendBorder = true
         }
         
         if (error.includes('newemail')){
-            newemailError = true
             newemailBorder = true
         }
     })

@@ -11,7 +11,7 @@ const sessionErrorsForm = ({typeOf, text, errorTrue, borderTrue}) => {
             />
             <div 
                 style={errorTrue ? {} : { display: "none" }}
-                className={`e-icon ${typeOf}-message-icon`}
+                className={`message-icon ${typeOf}-message-icon`}
             >
                 <p>{text}</p>
             </div>
