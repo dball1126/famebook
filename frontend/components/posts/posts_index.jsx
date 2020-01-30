@@ -1,6 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import PostsIndexItem from './posts_index_item';
+import NavBarContainer from '../navbar/navbar_container';
 
 class Posts extends React.Component {
     constructor(props){
@@ -51,6 +52,7 @@ class Posts extends React.Component {
         let username = this.props.user.username;
         return(
             <>
+                
                 <form onSubmit={this.handleSubmit}>
                     <div className="postform-headline">
                         <span>Create Post</span>
@@ -74,6 +76,8 @@ class Posts extends React.Component {
         let user = this.props.user;
        
         return  (
+            <>
+            <NavBarContainer />
             <div className="posts-wrapper">
                 <div className="posts-box">
                     <div className="posts-left-wrapper">
@@ -92,6 +96,7 @@ class Posts extends React.Component {
                     </div>
                 </div>
             </div>
+            </>
         )
     }
 }

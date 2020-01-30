@@ -9,6 +9,7 @@ class Login extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleInput = this.handleInput.bind(this);
     }
     handleInput(type) {
         return (e) => {
@@ -17,7 +18,7 @@ class Login extends React.Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        this.props.login(this.state).then(() => this.props.history.push('/posts'))
+        this.props.login(this.state)
     }
 
     render() {
@@ -41,7 +42,7 @@ class Login extends React.Component {
                     </div>
 
                     <div className="button-login">
-                        <div className="button-div" onClick={this.handleSubmit}>Log In</div>
+                        <button className="button-div" onClick={this.handleSubmit}>Log In</button>
                     </div>
                 </form>
                 

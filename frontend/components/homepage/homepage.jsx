@@ -1,6 +1,6 @@
 import React from 'react';
 import SignupContainer from '../session/signup_container';
-
+import NavBarContainer from '../navbar/navbar_container';
 class Homepage extends React.Component {
     constructor(props){
         super(props)
@@ -9,6 +9,8 @@ class Homepage extends React.Component {
     render(){
         
         return (
+            <>
+            <NavBarContainer />
             <div className="homepage-wrapper">
                 <div className="homepage-box">
                     <div className="homepage-box-left">
@@ -37,6 +39,7 @@ class Homepage extends React.Component {
                     </div>
                 </div>
             </div>
+            </>
         )
     }
 }

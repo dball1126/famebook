@@ -4,9 +4,9 @@ class Signup extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            month: '',
-            day: '',
-            year: '',
+            month: "01",
+            day: "01",
+            year: "1985",
             birthday: '',
             gender: '',
             first_name: '',
@@ -26,19 +26,11 @@ class Signup extends React.Component{
         e.preventDefault();
         let {month, day, year, birthday} = this.state
 
-        if (year === "") year = "1985";
-        if (month === "") month = "01";
-        if (day === "") day = "01";
             birthday = `${year}-${month}-${day}`;
             this.state.birthday = birthday;
-
-            // delete this.state.year
-            // delete this.state.month
-            // delete this.state.day
-            debugger
             
         this.props.signup(this.state)
-            .then( () => this.props.history.push('/'))
+            .then( () => this.props.history.push('/'));
     }
 
     render(){
