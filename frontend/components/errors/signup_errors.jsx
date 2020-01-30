@@ -6,11 +6,11 @@ const signUpErrors = ({typeOf, text, errorTrue, borderTrue}) => {
     return (
         <div className="signup-error">
             <FaExclamationCircle 
-                style={borderTrue ? "" : { display: "none" }}
+                style={borderTrue ? {} : { display: "none" }}
                 className={`e-icon ${typeOf}-e-icon`}
             />
             <div 
-                style={errorTrue ? "" : { display: "none" }}
+                style={errorTrue ? {} : { display: "none" }}
                 className={`e-icon ${typeOf}-e-icon`}
             >
                 <p>{text}</p>

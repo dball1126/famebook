@@ -3,7 +3,7 @@ import SignUpErrors from '../errors/signup_errors';
 
 class Signup extends React.Component{
     constructor(props){
-        debugger
+        
         super(props);
         this.state = {
             month: "01",
@@ -30,15 +30,15 @@ class Signup extends React.Component{
         }
     }
     componentDidUpdate(prevProps){
-        debugger
+        
         if (this.props !== prevProps) {
+            let {fnameError, fnameBorder, lnameBorder, lnameError} = this.props
+            
             this.setState({
-                fnameError: this.props.state.sessionErrors.includes("fname"),
-                fnameBorder: this.props.state.sessionErrors.includes("fname"),
-                lnameBorder: this.props.state.sessionErrors.includes("lname"),
-                lnameError: this.props.state.sessionErrors.includes("lname"),
-
-
+                fnameError: fnameError,
+                fnameBorder: fnameBorder,
+                lnameBorder: lnameBorder,
+                lnameError: lnameError,
             })
         }
     }
@@ -55,6 +55,8 @@ class Signup extends React.Component{
     }
 
     render(){
+       let {fnameBorder, fnameError, lnameBorder, lnameError} = this.state
+        debugger
         return (
             <div className="session-form">
                 <div className="signup-header1">Sign Up</div>
@@ -73,8 +75,8 @@ class Signup extends React.Component{
                             <SignUpErrors
                                     typeOf="fname"
                                     text="What's your name?"
-                                    errorTrue={this.state.fnameError}
-                                    borderTrue={this.state.fnameBorder}
+                                    errorTrue={fnameError}
+                                    borderTrue={fnameBorder}
 
                             />
                         </label>
@@ -89,8 +91,8 @@ class Signup extends React.Component{
                             <SignUpErrors
                                     typeOf="lname"
                                     text="What's your name?"
-                                    errorTrue={this.state.lnameError}
-                                    borderTrue={this.state.lnameBorder}
+                                    errorTrue={lnameError}
+                                    borderTrue={lnameBorder}
 
                             />
                             
