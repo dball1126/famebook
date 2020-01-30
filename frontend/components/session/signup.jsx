@@ -18,7 +18,15 @@ class Signup extends React.Component{
             fnameError: this.props.fnameError,
             fnameBorder: this.props.fnameBorder,
             lnameError: this.props.lnameError,
-            lnameBorder: this.props.lnameBorder
+            lnameBorder: this.props.lnameBorder,
+            newpassError: this.props.newpassError,
+            newpassBorder: this.props.newpassBorder,
+            bdayError: this.props.bdayError,
+            bdayBorder: this.props.bdayBorder,
+            gendError: this.props.gendError,
+            gendBorder: this.props.gendBorder,
+            newemailError: this.props.newemailError,
+            newemailBorder: this.props.newemailBorder
             
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,13 +40,19 @@ class Signup extends React.Component{
     componentDidUpdate(prevProps){
         
         if (this.props !== prevProps) {
-            let {fnameError, fnameBorder, lnameBorder, lnameError} = this.props
+            let {fnameError, fnameBorder, lnameBorder, lnameError,
+                 newemailBorder, newemailError, newpassBorder, newpassError,
+                } = this.props
             
             this.setState({
                 fnameError: fnameError,
                 fnameBorder: fnameBorder,
                 lnameBorder: lnameBorder,
                 lnameError: lnameError,
+                newemailError: newemailError,
+                newemailBorder: newemailBorder,
+                newpassBorder: newpassBorder,
+                newpassError: newpassError
             })
         }
 
@@ -58,7 +72,8 @@ class Signup extends React.Component{
     }
 
     render(){
-       let {fnameBorder, fnameError, lnameBorder, lnameError} = this.state
+       let {fnameBorder, fnameError, lnameBorder, lnameError,
+            newemailBorder, newemailError, newpassBorder, newpassError} = this.state
         
         return (
             <div className="session-form">
@@ -80,7 +95,6 @@ class Signup extends React.Component{
                                     text="What's your name?"
                                     errorTrue={fnameError}
                                     borderTrue={fnameBorder}
-
                             />
                         </label>
                         <label className="names">
@@ -104,17 +118,31 @@ class Signup extends React.Component{
 
                     <label className="signup-email-label">
                         <input type="text"
-                                className="email-password-signup"
+                                className={`email-password-signup ${newemailBorder ? "e-n-border" : ""}`}
                                 placeholder="email"
                                 value={this.state.email}
                                 onChange={this.handleInput('email')}/>
+                        <SignUpErrors
+                                    typeOf="newemail"
+                                    text="You'll use this when you log in and if you ever
+                                          need to reset your password."
+                                    errorTrue={newemailError}
+                                    borderTrue={newemailBorder}
+                        />
                     </label>
                     <label className="signup-password-label">
                         <input type="password"
-                                className="email-password-signup"
+                                className={`email-password-signup ${newpassBorder ? "e-p-border" : ""}`}
                                 placeholder="New password"
                                 value={this.state.password}
                                 onChange={this.handleInput('password')}/>
+                        <SignUpErrors
+                                    typeOf="newpass"
+                                    text="Enter a combination of at least six numbers,
+                                          letters and punctuation marks (like ! and)."
+                                    errorTrue={newpassError}
+                                    borderTrue={newpassBorder}
+                        />
                     </label>
 
                     <div className="birth-box">

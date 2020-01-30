@@ -2,7 +2,7 @@ import React from 'react';
 import { FaExclamationCircle } from 'react-icons/fa';
 
 const sessionErrorsForm = ({typeOf, text, errorTrue, borderTrue}) => {
-    debugger
+    
     return (
         <div className="signup-error">
             <FaExclamationCircle 
