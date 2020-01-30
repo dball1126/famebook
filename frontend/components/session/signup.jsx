@@ -56,7 +56,7 @@ class Signup extends React.Component{
 
     render(){
        let {fnameBorder, fnameError, lnameBorder, lnameError} = this.state
-        debugger
+        
         return (
             <div className="session-form">
                 <div className="signup-header1">Sign Up</div>
@@ -67,7 +67,7 @@ class Signup extends React.Component{
                         <label className="names">
                             <input 
                                     type="text"
-                                    className="firstname"
+                                    className={`firstname ${fnameBorder ? "e-border" : ""}`}
                                     placeholder="First name"
                                     value={this.state.first_name}
                                     onChange={this.handleInput('first_name')}
@@ -83,7 +83,7 @@ class Signup extends React.Component{
                         <label className="names">
                             <input 
                                     type="text"
-                                    className="lastname"
+                                    className={`lastname ${lnameBorder ? "e-border" : ""}`}
                                     placeholder="Last name"
                                     value={this.state.last_name}
                                     onChange={this.handleInput('last_name')}

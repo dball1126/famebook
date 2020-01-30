@@ -29,6 +29,7 @@ class Login extends React.Component {
         } else {
     
         return this.props.errors.map((error, i) => {
+            if(error.toLowerCase().includes(`${password}`) || error.toLowerCase().includes(`${email}`))
         return (
 
                 <div key={i} className="actual-error">

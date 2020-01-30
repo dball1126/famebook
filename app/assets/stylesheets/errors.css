@@ -12,3 +12,7 @@
     text-align: center;
     padding: 10px;
 }
+
+.session-form .e-border {
+    border-color: red;
+}

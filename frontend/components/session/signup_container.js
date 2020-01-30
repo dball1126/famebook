@@ -17,7 +17,7 @@ const mapStateToProps = (state) => {
             lnameError= true
             lnameBorder= true
     })
-  debugger
+  
     return {
         fnameError: fnameError,
         fnameBorder: fnameBorder,
