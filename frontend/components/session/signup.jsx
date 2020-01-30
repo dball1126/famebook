@@ -1,5 +1,5 @@
 import React from 'react';
-import SignUpErrors from '../errors/signup_errors';
+import SignUpErrors from '../errors/session_errors_form';
 
 class Signup extends React.Component{
     constructor(props){

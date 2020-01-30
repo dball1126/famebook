@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaExclamationCircle } from 'react-icons/fa';
 
-const signUpErrors = ({typeOf, text, errorTrue, borderTrue}) => {
-    
+const sessionErrorsForm = ({typeOf, text, errorTrue, borderTrue}) => {
+    debugger
     return (
         <div className="signup-error">
             <FaExclamationCircle 
@@ -19,4 +19,4 @@ const signUpErrors = ({typeOf, text, errorTrue, borderTrue}) => {
     )
 }
 
-export default signUpErrors;
+export default sessionErrorsForm;

@@ -4,15 +4,17 @@ import Login from './login';
 
 const mapStateToProps = (state) => {
     let errorsTrue = false;
-    let errors = [];
-    if (!(Object.entries(state.sessionErrors).length === 0 && state.sessionErrors.constructor === Object)
-    ) {
-        errors = state.sessionErrors
-        errorsTrue = true;
-    }
+    let loginErrorsBorder = false;
+    
+    state.sessionErrors.forEach(error => {
+        if(error.toLowerCase().includes("password") || error.toLowerCase().includes("email"))
+            errorsTrue = true;
+            loginErrorsBorder = true;
+    })
+
     return {
-        errors: errors,
-        errorsTrue: errorsTrue
+        errorsTrue: errorsTrue,
+        loginErrorsBorder: loginErrorsBorder
     }
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import LoginErrors from '../errors/session_errors_form';
 
 class Login extends React.Component {
     constructor(props) {
@@ -7,12 +8,24 @@ class Login extends React.Component {
             username: '',
             email: '',
             password: '',
-            errors: [],
-            errorsTrue: false
+            errorsTrue: false,
+            loginErrorsBorder: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
     }
+
+    componentDidUpdate(prevProps) {
+        if (this.props !== prevProps) {
+            let {errorTrue, loginErrorsBorder} = this.props
+            
+            this.setState({
+                loginErrorsBorder: loginErrorsBorder,
+                errorTrue: errorTrue
+            })
+        }
+    }
+
     handleInput(type) {
         return (e) => {
             this.setState({ [type]: e.target.value })
@@ -23,31 +36,22 @@ class Login extends React.Component {
         this.props.login(this.state)
     }
 
-    errors() {
-        if (!this.props.errorsTrue) {
-            return "";
-        } else {
     
-        return this.props.errors.map((error, i) => {
-            if(error.toLowerCase().includes(`${password}`) || error.toLowerCase().includes(`${email}`))
-        return (
-
-                <div key={i} className="actual-error">
-                    {error}
-                </div>
-                )
-            })
-        }
-    }
 
     render() {
-        let errors = this.props.errorsTrue;
+        let {errorsTrue, loginErrorsBorder} = this.props;
 
         return (
             <>
-                <div className="login-errors" style={{display: errors ? '' : 'none'}}>
-                    {this.errors()}
-                </div>
+                {/* <div className="login-errors" style={{display: errors ? '' : 'none'}}> */}
+                    <LoginErrors 
+                        typeOf="login"
+                        text="The email of phone number you've entered doesn't match
+                              any account. Sign up for an account."
+                        errorTrue={errorsTrue}
+                        borderTrue={loginErrorsBorder}
+                    />
+                {/* </div> */}
             <div className="login-session-form">
                 <form className="login-form">
                     <div className="email-login">
