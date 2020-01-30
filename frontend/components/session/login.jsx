@@ -36,8 +36,6 @@ class Login extends React.Component {
         this.props.login(this.state)
     }
 
-    
-
     render() {
         let {errorsTrue, loginErrorsBorder} = this.props;
 
